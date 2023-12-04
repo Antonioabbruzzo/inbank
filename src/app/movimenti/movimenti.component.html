@@ -1,0 +1,20 @@
+<h1 class="container">Ecco il tuo estratto conto</h1>
+<div class="container text-center">
+  <div class="row align-items-start">
+    <div class="col">
+      <div class="container" style="padding-top: 8rem;">
+
+        <div *ngFor="let movimento of movimenti" class="card" style="width: 24rem;"
+          (click)="visualdetail(movimento.amount)">
+          <h3>{{movimento.causal}}</h3>
+          <p>{{movimento.amount}} {{movimento.currency}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <app-dettagli-movimenti [selezionato]="movimentoSelezionato"></app-dettagli-movimenti>
+    </div>
+  </div>
+
+</div>
